@@ -1,6 +1,12 @@
 package collections_java_api_2025.list;
 
+import collections_java_api_2025.ordenacao.CadastroProduto;
 import collections_java_api_2025.ordenacao.Pessoa;
+import collections_java_api_2025.ordenacao.Produto;
+import collections_java_api_2025.set.AgendaContatos;
+import collections_java_api_2025.set.ConjuntoConvidados;
+import collections_java_api_2025.set.Contato;
+import collections_java_api_2025.set.Convidado;
 
 public class Main {
 
@@ -20,18 +26,18 @@ public class Main {
 		lista.imprimirListaDeTarefas();
 		System.out.println("Total de Tarefas: " + lista.obterTotalTarefas());
 		System.out.println("-----------------------------------------------------------------");
-		System.out.println("Removendo a tarefa: Participar de um curso online");	
+		System.out.println("Removendo a tarefa: Participar de um curso online");
 		lista.removeTarefa("Participar de um curso online");
 		System.out.println("Lista de Tarefas:");
 		lista.imprimirListaDeTarefas();
 		System.out.println("Total de Tarefas: " + lista.obterTotalTarefas());
 		System.out.println("-----------------------------------------------------------------");
-		System.out.println("Buscando a tarefa: Estudar Java");	
+		System.out.println("Buscando a tarefa: Estudar Java");
 		lista.findTarefa("Estudar Java");
 		System.out.println("-----------------------------------------------------------------");
 		System.out.println("Buscando a tarefa: Tarefa Inexistente");
 		lista.findTarefa("Tarefa Inexistente");
-		
+
 		System.out.println("-----------------------------------------------------------------");
 		CarrinhoDeCompras carrinho = new CarrinhoDeCompras();
 		carrinho.addItem("Notebook", 2500.00, 1);
@@ -80,5 +86,60 @@ public class Main {
 		System.out.println("Pessoas ordenadas por altura:");
 		ordenacaoPessoas.ordenarPorAltura();
 		ordenacaoPessoas.imprimeListaPessoasOrdenadasPorAltura();
+
+		System.out.println("-----------------------------------------------------------------");
+		ConjuntoConvidados conjuntoConvidados = new ConjuntoConvidados();
+		conjuntoConvidados.addConvidado(new Convidado("João", 101));
+		conjuntoConvidados.addConvidado(new Convidado("Maria", 102));
+		conjuntoConvidados.addConvidado(new Convidado("Pedro", 103));
+		conjuntoConvidados.addConvidado(new Convidado("Ana", 104));
+		conjuntoConvidados.addConvidado(new Convidado("Lucas", 105));
+		conjuntoConvidados.addConvidado(new Convidado("João", 101));
+		conjuntoConvidados.exibirConvidados();
+		System.out.println("-----------------------------------------------------------------");
+		conjuntoConvidados.removerCandidatoPorNumeroConvite(102);
+		conjuntoConvidados.exibirConvidados();
+		System.out.println("-----------------------------------------------------------------");
+		conjuntoConvidados.removerCandidatoPorNumeroConvite(999);
+		conjuntoConvidados.exibirConvidados();
+		System.out.println("-----------------------------------------------------------------");
+		AgendaContatos agendaContatos = new AgendaContatos();
+		agendaContatos.addContato(new Contato("Carlos", "1234-5678"));
+		agendaContatos.addContato(new Contato("Ana", "9876-5432"));
+		agendaContatos.addContato(new Contato("João Ricardo", "5555-5555"));
+		agendaContatos.addContato(new Contato("João Neves", "3333-5555"));
+		agendaContatos.addContato(new Contato("Maria", "1111-1111"));
+		agendaContatos.addContato(new Contato("Carlos", "1234-5678"));
+		agendaContatos.exibirContatos();
+		System.out.println("-----------------------------------------------------------------");
+		System.out.println("Pesquisando contatos por nome: Ricardo");
+		agendaContatos.pesquisarPorNome("Ricardo");
+		System.out.println("-----------------------------------------------------------------");
+		System.out.println("Pesquisando contatos por nome: Roberto");
+		agendaContatos.pesquisarPorNome("Roberto");
+		System.out.println("-----------------------------------------------------------------");
+		System.out.println("Atualizando número de contato: João para 2222-2222");
+		agendaContatos.atualizarNumeroContato("João", "2222-2222");
+		System.out.println("Atualizando número de contato: João Ricardo para 3333-2222");
+		agendaContatos.atualizarNumeroContato("João Ricardo", "3333-2222");
+		System.out.println("Atualizando número de contato: Roberto para 3333-3333 (não existe)");
+		agendaContatos.atualizarNumeroContato("Roberto", "3333-3333");
+		agendaContatos.exibirContatos();
+		System.out.println("-----------------------------------------------------------------");
+		CadastroProduto cadastroProduto = new CadastroProduto();
+		cadastroProduto.adicionaProduto(new Produto(1000,"Notebook", 2500.00, 1));
+		cadastroProduto.adicionaProduto(new Produto(1001,"Mouse", 50.00, 2));
+		cadastroProduto.adicionaProduto(new Produto(1002,"Teclado", 100.00, 1));
+		cadastroProduto.adicionaProduto(new Produto(1003,"Monitor", 800.00, 1));
+		cadastroProduto.adicionaProduto(new Produto(1004,"Cadeira Gamer", 1200.00, 1));
+		cadastroProduto.adicionaProduto(new Produto(1005,"Cadeira Gamer", 1200.00, 1));
+		cadastroProduto.adicionaProduto(new Produto(1006,"Cadeira Gamer", 1200.00, 1));
+		System.out.println("Exibindo produtos cadastrados:");
+		cadastroProduto.exibirProdutos();
+		System.out.println("Exibindo produtos por nome em ordem alfabética:");
+		cadastroProduto.exibirProdutosPorNomeEmOrdemAlfabetica();
+		System.out.println("-----------------------------------------------------------------");
+		System.out.println("Exibindo produtos por preço em ordem crescente:");
+		cadastroProduto.exibirProdutosPorPrecoEmOrdemCrescente();
 	}
 }
