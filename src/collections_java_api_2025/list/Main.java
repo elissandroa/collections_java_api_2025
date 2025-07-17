@@ -1,5 +1,7 @@
 package collections_java_api_2025.list;
 
+import collections_java_api_2025.ordenacao.Pessoa;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -63,5 +65,20 @@ public class Main {
 		catalogo.pesquisarPorIntervaloAnos(2018, 2020);
 		System.out.println("-----------------------------------------------------------------");
 		catalogo.pesquisarPorTitulo("Effective Java");
+		System.out.println("-----------------------------------------------------------------");
+		OrdenacaoPessoas ordenacaoPessoas = new OrdenacaoPessoas();
+		ordenacaoPessoas.addPessoa(new Pessoa("Alice", 30, 1.65));
+		ordenacaoPessoas.addPessoa(new Pessoa("Bob", 25, 1.80));
+		ordenacaoPessoas.addPessoa(new Pessoa("Charlie", 35, 1.75));
+		System.out.println("Lista de Pessoas:");
+		ordenacaoPessoas.imprimeListaPessoas();
+		System.out.println("-----------------------------------------------------------------");
+		System.out.println("Pessoas ordenadas por idade:");
+		ordenacaoPessoas.ordenarPorIdade();
+		ordenacaoPessoas.imprimeListaPessoasOrdenadasPorIdade();
+		System.out.println("-----------------------------------------------------------------");
+		System.out.println("Pessoas ordenadas por altura:");
+		ordenacaoPessoas.ordenarPorAltura();
+		ordenacaoPessoas.imprimeListaPessoasOrdenadasPorAltura();
 	}
 }
