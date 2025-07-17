@@ -48,5 +48,20 @@ public class Main {
 		carrinho.calcularValorTotal();
 		System.out.println("-----------------------------------------------------------------");
 
+		CatalogoLivros catalogo = new CatalogoLivros();
+		catalogo.addLivro("Java: Como Programar", "Deitel", 2020);
+		catalogo.addLivro("Effective Java", "Joshua Bloch", 2018);
+		catalogo.addLivro("Clean Code", "Robert C. Martin", 2019);
+		catalogo.addLivro("Java Concurrency in Practice", "Brian Goetz", 2017);
+		catalogo.addLivro("Head First Java", "Kathy Sierra", 2021);
+		catalogo.addLivro("Head First Java", "Kathy Sierra", 2021);
+		catalogo.addLivro("Head First Java", "Kathy Sierra", 2021);
+		catalogo.imprimirCatalogo();
+		System.out.println("-----------------------------------------------------------------");
+		catalogo.pesquisarPorAutor("Deitel");
+		System.out.println("-----------------------------------------------------------------");
+		catalogo.pesquisarPorIntervaloAnos(2018, 2020);
+		System.out.println("-----------------------------------------------------------------");
+		catalogo.pesquisarPorTitulo("Effective Java");
 	}
 }
