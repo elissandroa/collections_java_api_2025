@@ -4,19 +4,19 @@ import java.util.Objects;
 
 public class Produto {
 
-	private int codigo;
+	private Double codigo;
 	private String nome;
 	private double preco;
 	private int quantidade;
 	
-	public Produto(int codigo, String nome, double preco, int quantidade) {
+	public Produto(double codigo, String nome, double preco, int quantidade) {
 		this.codigo = codigo;
 		this.nome = nome;
 		this.preco = preco;
 		this.quantidade = quantidade;
 	}
 	
-	public int getCodigo() {
+	public double getCodigo() {
 		return codigo;
 	}
 
@@ -52,7 +52,7 @@ public class Produto {
 
 	@Override
 	public String toString() {
-		return "Produto [codigo="+ codigo + " nome=" + nome + ", preco=" + preco + ", quantidade=" + quantidade + "]";
+		return "[codigo="+ String.format("%.0f", codigo) + " nome=" + nome + ", preco=" + preco + ", quantidade=" + quantidade + "]";
 	}
 	
 	
